@@ -1,0 +1,47 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# IDE
+.vscode/
+
+# Azure Static Web Apps CLI
+swa-cli.config.json
+
+# Environment files
+.env
+.env.*
+
+# Secrets / Keys
+*.pem
+*.key
+*.pfx
+*.publishsettings
+
+# Azure
+.azure/
+
+# Terraform (future use)
+.terraform/
+*.tfstate
+*.tfstate.*
