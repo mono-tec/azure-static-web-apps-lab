@@ -1,18 +1,36 @@
 <!doctype html>
 <html lang="ja">
 <head>
+  <!-- 文字コード設定 -->
   <meta charset="utf-8" />
+
+  <!-- スマホ表示対応 -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ページタイトル -->
   <title>Cloud Trial LP | Azure Static Web Apps Demo</title>
+
+  <!-- 検索エンジン向け説明 -->
   <meta name="description" content="Azure Static Web Apps Free 検証用の雑なサンプルLPです。" />
+
+  <!-- CSS 読み込み -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
+
+  <!-- =========================
+       ヘッダー
+       ========================= -->
   <header class="site-header">
+
+    <!-- ロゴエリア -->
     <a class="brand" href="#top" aria-label="Cloud Trial LP Home">
       <span class="brand-mark">CT</span>
       <span>Cloud Trial LP</span>
     </a>
+
+    <!-- ページ内リンク -->
     <nav class="nav" aria-label="メインナビゲーション">
       <a href="#features">特徴</a>
       <a href="#flow">検証手順</a>
@@ -21,81 +39,52 @@
   </header>
 
   <main id="top">
+
+    <!-- =========================
+         メインビジュアル
+         ========================= -->
     <section class="hero section">
+
+      <!-- 説明エリア -->
       <div class="hero-copy">
+
         <p class="eyebrow">Azure Static Web Apps Free 検証用</p>
-        <h1>GitHub Actions で<br />自動デプロイするLPサンプル</h1>
+
+        <h1>
+          GitHub Actions で<br />
+          自動デプロイするLPサンプル
+        </h1>
+
         <p class="lead">
-          まずは見た目よりも構成確認を優先。HTML / CSS / JavaScript だけで動く、
-          雑に置ける静的サイトのたたき台です。
+          まずは見た目よりも構成確認を優先。
+          HTML / CSS / JavaScript だけで動く、
+          静的サイトのたたき台です。
         </p>
+
+        <!-- ボタン -->
         <div class="hero-actions">
           <a class="button primary" href="#flow">検証の流れを見る</a>
-          <a class="button ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHubへ</a>
+
+          <a
+            class="button ghost"
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHubへ
+          </a>
         </div>
       </div>
+
+      <!-- デプロイ状態表示イメージ -->
       <div class="hero-card" aria-label="デプロイ状態のサンプルカード">
+
         <div class="status-dot"></div>
+
         <p class="card-label">Deployment Status</p>
+
         <strong>Ready for SWA</strong>
+
         <span>main ブランチへの push で公開</span>
       </div>
     </section>
-
-    <section id="features" class="section">
-      <p class="eyebrow">Features</p>
-      <h2>検証に必要な要素だけを配置</h2>
-      <div class="grid cards">
-        <article class="card">
-          <h3>静的ファイルのみ</h3>
-          <p>ビルド不要で、GitHub Repository に配置してすぐ確認できます。</p>
-        </article>
-        <article class="card">
-          <h3>デザインは仮</h3>
-          <p>既存LPと重複しないよう、暗めのグラデーションとカードUIにしています。</p>
-        </article>
-        <article class="card">
-          <h3>差し替え前提</h3>
-          <p>あとで正式なソースコードや文章に置き換えやすい単純な構成です。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="flow" class="section split">
-      <div>
-        <p class="eyebrow">Flow</p>
-        <h2>このあと確認したい流れ</h2>
-        <ol class="steps">
-          <li>GitHub Repository を作成</li>
-          <li>このサンプルLPを push</li>
-          <li>ARMテンプレートで Static Web Apps を作成</li>
-          <li>GitHub Actions secret を設定</li>
-          <li>main push で自動デプロイ確認</li>
-        </ol>
-      </div>
-      <div class="code-panel">
-        <span>app_location</span>
-        <code>/</code>
-        <span>output_location</span>
-        <code></code>
-        <span>api_location</span>
-        <code></code>
-      </div>
-    </section>
-
-    <section id="contact" class="section cta">
-      <p class="eyebrow">Next</p>
-      <h2>次は Azure 構築と Actions 連携へ</h2>
-      <p>正式ソースを受け取る前に、Free プランでの公開・更新・削除の流れを検証します。</p>
-      <button id="checkButton" class="button primary" type="button">疎通チェック</button>
-      <p id="checkResult" class="result" aria-live="polite"></p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <small>© 2026 Cloud Trial LP. Demo only.</small>
-  </footer>
-
-  <script src="./script.js"></script>
-</body>
-</html>
