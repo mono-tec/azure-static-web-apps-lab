@@ -6,9 +6,25 @@
 //
 // 事前に Resource Group を作成してください
 
-// Azure リージョン
+// Azure Static Web Apps は利用可能リージョンが限定されています
+// 本サンプルでは eastasia を利用します
 @description('Azure region')
-param location string = 'japaneast'
+param location string = 'eastasia'
+
+// GitHub Repository URL
+// fork 後の自分の Repository URL を指定します
+@description('GitHub repository URL')
+param repositoryUrl string
+
+// GitHub Personal Access Token
+// Azure Static Web Apps 作成時に GitHub Actions 連携で利用します
+@secure()
+@description('GitHub Personal Access Token')
+param repositoryToken string
+
+// 利用ブランチ
+@description('GitHub branch name')
+param branch string = 'main'
 
 // =====================================================
 // URL 重複回避用サフィックス
@@ -44,10 +60,13 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-12-01' = {
   properties: {
 
     // GitHub Actions 連携時に利用
-    repositoryUrl: 'https://github.com/mono-tec/azure-static-web-apps-lab'
+    repositoryUrl: repositoryUrl
 
     // 利用ブランチ
-    branch: 'main'
+    branch: branch
+
+    // GitHub 連携用 Token
+    repositoryToken: repositoryToken
 
     // アプリ配置場所
     buildProperties: {
