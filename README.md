@@ -1,4 +1,4 @@
-# azure-static-web-apps-lab
+# mono-template-azure-static-web-apps
 
 Azure Static Web Apps Free を利用した、
 軽量LP + GitHub Actions + Bicep 検証用 Repository です。
